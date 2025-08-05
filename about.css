@@ -1,0 +1,164 @@
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --primary: #5a4fcf;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #1e1e2f;
+  --text: #f0f0f0;
+  --primary: #8c7fff;
+  --shadow: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 700px;
+  background: var(--bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px var(--shadow);
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+  margin: 1rem 0;
+}
+
+ul li {
+  margin-bottom: 0.6rem;
+  list-style: "✅ ";
+}
+
+strong {
+  color: var(--primary);
+}
+
+.links {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #2ecc71;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.4);
+}
+
+/* Theme toggle switch */
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.theme-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.theme-toggle .switch {
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+.theme-toggle .slider {
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #f4f4f5;
+  border-radius: 30px;
+  transition: 0.4s;
+}
+
+.theme-toggle .slider:before {
+  content: "";
+  position: absolute;
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.3em;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.theme-toggle input:checked + .slider {
+  background-color: #303136;
+}
+
+.theme-toggle input:checked + .slider:before {
+  left: calc(100% - 1.4em - 0.3em);
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .about-container {
+    padding: 1.5rem;
+  }
+
+  .links a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .theme-toggle {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Use our free online age calculator to get precise age in years, months, days, hours, minutes, and seconds. Handy birthday confetti and download result features included." />
+
+    <title>Age Calculator</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <audio id="result-sound" src="ding.mp3" preload="auto"></audio>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <div class="container">
+        <h1>Age Calculator</h1>
+        <p class="today-date">Today: <span id="current-date"></span></p>
+        <b>Change Theme</b>
+        <div class="theme-toggle">
+          <label class="switch">
+            <input type="checkbox" id="theme-switch" />
+            <span class="slider" id="theme-icon"></span>
+          </label>
+        </div>
+
+        <form id="age-form">
+          <label for="name">Enter Your Name:</label>
+          <input type="text" id="name" placeholder="e.g. shivi" required />
+
+          <label>Enter Your Date of Birth:</label>
+<div class="dob-select">
+  <select id="dob-month" required>
+    <option value="" disabled selected>Month</option>
+    <option value="0">January</option>
+    <option value="1">February</option>
+    <option value="2">March</option>
+    <option value="3">April</option>
+    <option value="4">May</option>
+    <option value="5">June</option>
+    <option value="6">July</option>
+    <option value="7">August</option>
+    <option value="8">September</option>
+    <option value="9">October</option>
+    <option value="10">November</option>
+    <option value="11">December</option>
+  </select>
+
+  <select id="dob-day" required>
+    <option value="" disabled selected>Day</option>
+  </select>
+
+  <select id="dob-year" required>
+    <option value="" disabled selected>Year</option>
+  </select>
+</div>
+
+          <label>Select Gender:</label>
+          <div class="gender-options">
+            <label><input type="radio" name="gender" value="male" required /> Male</label>
+            <label><input type="radio" name="gender" value="female" required /> Female</label>
+          </div>
+
+          <div class="btns">
+            <button type="submit">Calculate</button>
+            <button type="button" id="reset">Clear</button>
+          </div>
+        </form>
+
+        <div id="loader" class="loader" style="display: none; transform: scale(0.8);"></div>
+
+        <div id="result-section" style="display: none">
+          <div class="result" id="result"></div>
+          <div id="visual-card" class="visual-card">
+            <img id="age-image" src="" alt="Age cartoon" />
+            <p id="age-text"></p>
+          </div>
+          <button id="recalculate" type="button">🔁 Recalculate</button>
+          <button id="download" type="button">📥 Download Result</button>
+        </div>
+
+        <div class="toast" id="toast"></div>
+        <div class="confetti" id="confetti">🎉 Happy Birthday! 🎉</div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <p>Made with <span class="heart">❤️</span> by <strong>Shivani</strong></p>
+          <div class="footer-links">
+            <a href="https://github.com/shivi-2912" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/shivani-gupta-488977302/" target="_blank">LinkedIn</a>
+            <!-- <a href="about.html" target="_blank">About</a> -->
+          </div>
+          <p class="copyright">© <span id="year"></span> All rights reserved</p>
+        </div>
+      </footer>
+    </div>
+
+    <a href="https://wa.me/923218492868" class="whatsapp-float" target="_blank">
+      <img src="img/whatsapp.webp" alt="WhatsApp" />
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
